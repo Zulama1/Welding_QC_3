@@ -146,20 +146,6 @@ npm run dev
 
 4. Access the web client instance via your browser viewport at `http://localhost:5173`.
 
----
-
-## 👥 Credits & Collaborators
-
-* **Project Architect / Lead Engineer:** Abinash Boro & Aditya Rag (*BIT Mesra*)
-* **Project Mentor & Verifier:** Arabinda Nandi & Sir Parmanand Raut
-* **Industry Framework Sponsor:** NTPC Limited (*National Thermal Power Corporation*)
-
----
-
 ## 📄 License
 
 This project is structured as open-source empirical proof of structural architectural stability under the [MIT License](https://www.google.com/search?q=LICENSE).
-
-```
-
-```
