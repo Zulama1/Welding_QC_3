@@ -1,19 +1,18 @@
-```markdown
-# Consolidated Quality Assurance & Inspection Logging System (WeldQC)
 
-A real-time, Role-Based Access Controlled (RBAC) data logging and analytics system engineered for heavy industrial engineering fabrication pipelines, specifically tailored for high-pressure boiler piping installations at **NTPC Darlipali**. This system coordinates Non-Destructive Testing (NDT) workflows—including Radiography Testing (RT), Phased Array Ultrasonic Testing (PAUT), and Magnetic Particle Inspection (MPI)—and reconciles them with Pre-Heating/Post-Weld Heat Treatment (PWHT) compliance criteria.
+A real-time, Role-Based Access Controlled (RBAC) data logging and analytics system engineered for heavy industrial engineering fabrication pipelines, specifically tailored for high-pressure boiler piping installations at **NTPC Darlipali**. This system coordinates Non-Destructive Testing (NDT) workflows—including Radiography Testing (RT), Phased Array Ultrasonic Testing (PAUT), and Magnetic Particle Inspection (MPI)—and seamlessly reconciles them with Pre-Heating/Post-Weld Heat Treatment (PWHT) compliance criteria.
 
----
 
 ## 🚀 System Architecture & Impact
 
 
 ```
 
-[ React Client ] <---> [ Express.js Gateway ] <---> [ MySQL Database ]
-(Tailwind CSS)          (Sequelize / Knex)         (JSON Column Store)
+┌────────────────┐       ┌───────────────────────┐       ┌──────────────────────┐
+│  React Client  │ <───> │  Express.js Gateway   │ <───> │    MySQL Database    │
+│ (Tailwind CSS) │       │  (Sequelize / Knex)   │       │ (JSON Column Store)  │
+└────────────────┘       └───────────────────────┘       └──────────────────────┘
 
-```markdown
+```
 
 * **Data Centralization:** Replaces fragmented Excel spreadsheets with a centralized, relational source of truth, eliminating data silos across independent testing branches.
 * **Role-Based Access Isolation:** Restricts field parameter modification, results updates, and artifact verification exclusively to certified verifiers while allowing supervisors to manage structural offer sheets.
@@ -23,45 +22,63 @@ A real-time, Role-Based Access Controlled (RBAC) data logging and analytics syst
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** Single Page Application (SPA) built via **React (v18+)** utilizing functional context wrappers for global state tracking, custom Tailwind CSS layout engines, and asynchronous token transmission handlers.
-* **Backend Framework:** **Express.js (Node.js)** handling low-latency RESTful endpoint orchestration, asynchronous route middleware pooling, and strict request validation layers.
-* **ORM:** **Sequelize / Knex.js** abstracting complex queries and relational mapping patterns into clean object models.
-* **Database Management:** **MySQL Server** storing core spatial structural tracking attributes inside indexed tables, with nested testing sub-sequences neatly managed inside queryable `JSON` cell structures.
+* **Frontend:** Single Page Application (SPA) built via React (v18+) utilizing functional context wrappers for global state tracking, custom Tailwind CSS layout engines, and asynchronous token transmission handlers.
+* **Backend Framework:** Express.js (Node.js) handling low-latency RESTful endpoint orchestration, asynchronous route middleware pooling, and strict request validation layers.
+* **ORM:** Sequelize / Knex.js abstracting complex queries and relational mapping patterns into clean object models.
+* **Database Management:** MySQL Server storing core spatial structural tracking attributes inside indexed tables, with nested testing sub-sequences neatly managed inside queryable JSON cell structures.
 
----markdo
+---
 
 ## ⚙️ Core Algorithmic & Logical Pipelines
 
 ### 1. Unique Identification Signature
 To prevent duplicate entry exceptions across alternative diagnostic centers, every registered component features a compressed, immutable alphanumeric code string generated via spatial relational variables:
-$$\text{Unique ID} = \text{Joint ID} + \text{Area System} + \text{Coil No} + \text{Tube No}$$
+```text
+Unique ID = Joint ID + Area System + Coil No + Tube No
+
+```
 
 ### 2. Case-Insensitive Relational Filtering
+
 The system handles strict pipeline dependencies across sequential modules. Components entering the Post-Weld Heat Treatment node are automatically evaluated and filtered using case-insensitive criteria to ensure data continuity:
-$$\text{Filter Condition} \implies (row.pwht\_required \equiv \text{true}) \lor (\text{String}(row.pwht\_required).\text{toLowerCase}() \equiv \text{"yes"})$$
+
+```text
+Filter Condition => (row.pwht_required === true) || (String(row.pwht_required).toLowerCase() === "yes")
+
+```
 
 ### 3. Progressive NDT Lifecycle Matrix
+
 Welds that fail initial checks can be run through infinite repair and inspection re-cycles. The system logs a continuous sequence matrix tracking incremental attempt cycles independently:
-$$\text{Attempt Cycle} = \{a_1, a_2, \dots, a_N\} \in \mathbb{N}$$
-Each cycle logs specific categorical evaluations (`Pending`, `Pass`, `Fail`) along with strict defect taxonomy data.
+
+```text
+Attempt Cycle = [1st Attempt, Attempt #2, ..., Attempt #N]
+
+```
+
+Each cycle logs specific categorical evaluations (*Pending*, *Pass*, *Fail*) along with strict defect taxonomy data.
 
 ### 4. Aggregate Performance Velocity
+
 To track project compliance metrics, the dashboard aggregates row-level records by execution date to solve for production pass benchmarks:
-$$\text{Pass Rate (\%)} = \left( \frac{\text{Passed Joints}}{\text{Total Completed Joints}} \right) \times 100\%$$
+
+```text
+Pass Rate (%) = (Passed Joints / Total Completed Joints) * 100
+
+```
 
 ---
 
-
-## 🛠️ Installation & Setup
+## ⚙️ Installation & Setup
 
 ### Prerequisites
 
-* Node.js (v18.x or higher)
-* MySQL Server (v8.x or higher)
+* **Node.js:** v18.x or higher
+* **MySQL Server:** v8.x or higher
 
 ### 1. Database Configuration
 
-Log into your MySQL terminal and establish your base data schema:
+Log into your MySQL terminal or GUI environment and establish your base data schema:
 
 ```sql
 CREATE DATABASE welding_qc_db;
@@ -77,21 +94,21 @@ cd backend
 ```
 
 
-2. Install dependencies:
+2. Install the necessary system and runtime dependencies:
 ```bash
 npm install
 
 ```
 
 
-3. Establish a `.env` configuration file in the backend root:
+3. Establish a `.env` configuration file in the backend root directory:
 ```env
 PORT=5000
 DB_HOST=localhost
 DB_USER=your_username
 DB_PASS=your_password
 DB_NAME=welding_qc_db
-JWT_SECRET=your_token
+JWT_SECRET=your_system_secret_token
 
 ```
 
@@ -127,7 +144,22 @@ npm run dev
 ```
 
 
-4. Access the web client instance via your fallback browser viewport at `http://localhost:5173`.
+4. Access the web client instance via your browser viewport at `http://localhost:5173`.
 
+---
+
+## 👥 Credits & Collaborators
+
+* **Project Architect / Lead Engineer:** Abinash Boro & Aditya Rag (*BIT Mesra*)
+* **Project Mentor & Verifier:** Arabinda Nandi & Sir Parmanand Raut
+* **Industry Framework Sponsor:** NTPC Limited (*National Thermal Power Corporation*)
+
+---
+
+## 📄 License
+
+This project is structured as open-source empirical proof of structural architectural stability under the [MIT License](https://www.google.com/search?q=LICENSE).
+
+```
 
 ```
