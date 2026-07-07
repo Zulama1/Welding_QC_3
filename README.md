@@ -13,7 +13,7 @@ A real-time, Role-Based Access Controlled (RBAC) data logging and analytics syst
 [ React Client ] <---> [ Express.js Gateway ] <---> [ MySQL Database ]
 (Tailwind CSS)          (Sequelize / Knex)         (JSON Column Store)
 
-```
+```markdown
 
 * **Data Centralization:** Replaces fragmented Excel spreadsheets with a centralized, relational source of truth, eliminating data silos across independent testing branches.
 * **Role-Based Access Isolation:** Restricts field parameter modification, results updates, and artifact verification exclusively to certified verifiers while allowing supervisors to manage structural offer sheets.
@@ -28,7 +28,7 @@ A real-time, Role-Based Access Controlled (RBAC) data logging and analytics syst
 * **ORM:** **Sequelize / Knex.js** abstracting complex queries and relational mapping patterns into clean object models.
 * **Database Management:** **MySQL Server** storing core spatial structural tracking attributes inside indexed tables, with nested testing sub-sequences neatly managed inside queryable `JSON` cell structures.
 
----
+---markdo
 
 ## ⚙️ Core Algorithmic & Logical Pipelines
 
@@ -91,7 +91,7 @@ DB_HOST=localhost
 DB_USER=your_username
 DB_PASS=your_password
 DB_NAME=welding_qc_db
-JWT_SECRET=your_system_secret_token
+JWT_SECRET=your_token
 
 ```
 
@@ -129,18 +129,5 @@ npm run dev
 
 4. Access the web client instance via your fallback browser viewport at `http://localhost:5173`.
 
----
-
-## 👥 Credits & Collaborators
-
-* **Project Architect / Lead Engineer:** Abinash Boro & Aditya Rag (BIT Mesra)
-* **Project Mentor & Verifier:** Arabinda Nandi & Sir Parmanand Raut
-* **Industry Framework Sponsor:** NTPC Limited (National Thermal Power Corporation)
-
----
-
-*License: This project is structured as open-source empirical proof of structural architectural stability.*
-
-```
 
 ```
